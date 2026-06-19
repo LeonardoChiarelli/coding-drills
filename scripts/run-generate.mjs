@@ -1,6 +1,7 @@
 // scripts/run-generate.mjs
 import { spawn } from 'node:child_process';
-import { appendFile, mkdir } from 'node:fs/promises';
+import { appendFileSync } from 'node:fs';
+import { mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { runJob } from '../lib/runner.mjs';
@@ -22,7 +23,7 @@ function exec(cmd, args, opts = {}) {
 async function main() {
   await mkdir(join(repoPath, 'state', 'logs'), { recursive: true });
   const logFile = join(repoPath, 'state', 'logs', 'generate.log');
-  const log = (m) => appendFile(logFile, `[${process.env.CD_NOW ?? ''}] ${m}\n`).catch(() => {});
+  const log = (m) => { try { appendFileSync(logFile, `[${new Date().toISOString()}] ${m}\n`); } catch {} };
   const settings = await readJson(join(repoPath, 'config', 'settings.json'));
   const res = await runJob({
     repoPath,
