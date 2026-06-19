@@ -1,0 +1,8 @@
+{
+  "schedule": { "generate": "21:00", "review": "07:00", "timezone": "America/Sao_Paulo" },
+  "level": "intermediate",
+  "pillars": { "logic": true, "algorithms": true, "dataStructures": true, "architecture": true },
+  "exercisesPerDay": 10,
+  "languages": { "mode": "free", "allowed": [] },
+  "git": { "remote": "git@github.com:user/coding-drills.git", "autoPush": true }
+}
