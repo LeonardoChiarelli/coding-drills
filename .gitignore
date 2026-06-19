@@ -1,3 +1,7 @@
 node_modules/
 state/logs/*.log
 .DS_Store
+# per-user config written by install.mjs (template lives in config/settings.example.json)
+config/settings.json
+# temp installer driver
+.bootstrap-tmp.mjs

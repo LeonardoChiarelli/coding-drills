@@ -3,6 +3,7 @@ import { createInterface } from 'node:readline/promises';
 import { stdin, stdout, exit, version } from 'node:process';
 import { execSync } from 'node:child_process';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { defaultSettings, writeJson } from './lib/store.mjs';
 import { seedProgress } from './lib/adapt.mjs';
 import { checkPreflight } from './lib/preflight.mjs';
@@ -69,4 +70,4 @@ function osExec(cmd, args) {
   });
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();
