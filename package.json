@@ -1,0 +1,12 @@
+{
+  "name": "coding-drills",
+  "version": "0.1.0",
+  "description": "Daily adaptive coding exercises generated and reviewed by Claude Code",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "test": "node --test",
+    "install:wizard": "node install.mjs"
+  }
+}
