@@ -4,5 +4,7 @@
   "difficulty": 0.5,
   "weakSpots": [],
   "languageFriction": [],
-  "history": []
+  "history": [
+    { "day": "week-01/day-03", "score": 0, "solved": 0, "total": 10, "skipped": true }
+  ]
 }
